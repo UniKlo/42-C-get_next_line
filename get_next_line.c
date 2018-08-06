@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: khou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 12:53:01 by khou              #+#    #+#             */
-/*   Updated: 2018/08/03 14:35:57 by khou             ###   ########.fr       */
+/*   Updated: 2018/08/06 14:20:25 by khou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +19,9 @@ int		get_begin(char **str, char **line)
 
 	if ((*str)[0] == '\0')//nothing in file
 		return (0);
-	if (ft_strchr(*str, '\n') && !(*(ft_strchr(*str, '\n')) = '\0'))
+	if (ft_strchr(*str, '\n') && !(*(ft_strchr(*str, '\n')) = '\0'))//set '\n' to '\0' and return true
 	{
-		*line = ft_strdup(*str);
+		*line = ft_strdup(*str);//dup till '\0'
 		beg = ft_strdup(ft_strchr(*str, '\0') + 1);
 		free(*str);
 		*str = beg;
@@ -51,8 +52,5 @@ int		get_next_line(const int fd, char **line)
 		str[fd] = ft_strdup(holder);
 		free(holder);
 	}
-/*	if (!ft_strlen(holder))//if read does not 
-		return (0);
-*/
 	return (get_begin(&str[fd], line));//if read line is shorter than BUFF_SIZE or found '/n'
 }
