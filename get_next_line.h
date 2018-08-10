@@ -6,7 +6,7 @@
 /*   By: khou <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 11:58:12 by khou              #+#    #+#             */
-/*   Updated: 2018/08/03 11:25:58 by khou             ###   ########.fr       */
+/*   Updated: 2018/08/09 16:11:21 by khou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # include <sys/types.h>
 # include "libft/libft.h"
 
-# define BUFF_SIZE 4096
+# define BUFF_SIZE 4000
+# define MAX_FD 4865
 
 int		get_next_line(const int fd, char **line);
 
